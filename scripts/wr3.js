@@ -40,12 +40,12 @@ const SAMPLES = {
 
 const IMAGE_LINK = /\.(?:jpe?g|png|webp|gif|avif)(?:[?#].*)?$/i;
 
-export function makePicture(src, alt = '') {
+export function makePicture(src, alt = '', eager = false) {
   const picture = document.createElement('picture');
   const img = document.createElement('img');
   img.src = src;
   img.alt = alt;
-  img.loading = 'lazy';
+  img.loading = eager ? 'eager' : 'lazy';
   picture.append(img);
   return picture;
 }

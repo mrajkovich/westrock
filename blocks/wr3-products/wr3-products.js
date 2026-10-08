@@ -2,7 +2,7 @@ import { el, decoratePlaceholders, findMedia } from '../../scripts/wr3.js';
 
 /**
  * Authoring:
- *   optional first row, single cell: eyebrow paragraph + H2 heading
+ *   optional first row: eyebrow paragraph + H2 heading (an empty second cell is ignored)
  *   then one row per product card, two cells:
  *     cell 1: image
  *     cell 2: H3 title, short description, link (the whole card becomes clickable)
@@ -12,9 +12,10 @@ export default function decorate(block) {
   const rows = [...block.children];
   const wrap = el('div', 'wr3-wrap');
 
-  if (rows[0] && rows[0].children.length === 1) {
+  // a first row holding an H1/H2 is the section heading, whether it has one cell or two
+  if (rows[0] && rows[0].querySelector('h1, h2') && !rows[0].querySelector('h3, a')) {
     const head = el('div', 'wr3-products-head');
-    head.append(...rows.shift().firstElementChild.children);
+    [...rows.shift().children].forEach((cell) => head.append(...cell.children));
     const first = head.firstElementChild;
     if (first?.tagName === 'P' && !first.querySelector('a')) first.className = 'wr3-eyebrow';
     wrap.append(head);

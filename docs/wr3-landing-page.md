@@ -14,7 +14,7 @@ placeholder; replace it with a real image and the placeholder disappears.
 | wr3-nav | 1 row, 2 cells: brand link, nav links (last link is shown as an outlined button) |
 | wr3-hero | 1 row, 2 cells: [breadcrumb paragraph with links, H1, CTA link] and [square image 740x740] |
 | wr3-intro | 1 cell: H2 lead, paragraphs, bullet list of `**Title**: text` |
-| wr3-products | optional row 1 (1 cell: eyebrow paragraph + H2); then 1 row per card, 2 cells: [image] and [H3, description, link]. Use 8 rows for an 8-card grid |
+| wr3-products | optional row 1 (eyebrow paragraph + H2; a second empty cell is fine); then 1 row per card, 2 cells: [image] and [H3, description, link]. Use 8 rows for an 8-card grid |
 | wr3-band | 1 cell: H2, paragraph, CTA link |
 | wr3-stories | row 1: H2. row 2: one cell per story (first = featured): image, H3, "Read more" link. optional row 3: "View our success stories" link |
 | wr3-sustain | row 1: H2. row 2: cell 1 = repeated [icon paragraph, H3, text] (3 stat cards); cell 2 = repeated [image, link paragraph] (2 image cards, link is the caption) |

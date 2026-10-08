@@ -36,7 +36,7 @@ export default function decorate(block) {
 
   const media = el('div', 'wr3-hero-media');
   // an empty cell falls back to the sample photo so the hero is never blank
-  const picture = (mediaCell ? findMedia(mediaCell) : null) || makePicture('/media/wr3/hero.jpg');
+  const picture = (mediaCell ? findMedia(mediaCell) : null) || makePicture('/media/wr3/hero.jpg', '', true);
   if (picture) {
     const frame = el('div', 'wr3-hero-frame');
     frame.append(picture);
