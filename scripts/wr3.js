@@ -40,7 +40,7 @@ const SAMPLES = {
 
 const IMAGE_LINK = /\.(?:jpe?g|png|webp|gif|avif)(?:[?#].*)?$/i;
 
-function makePicture(src, alt = '') {
+export function makePicture(src, alt = '') {
   const picture = document.createElement('picture');
   const img = document.createElement('img');
   img.src = src;

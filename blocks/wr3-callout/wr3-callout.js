@@ -1,5 +1,5 @@
 import {
-  el, decoratePlaceholders, decorateButtons, findMedia,
+  el, decoratePlaceholders, decorateButtons, findMedia, makePicture,
 } from '../../scripts/wr3.js';
 
 /**
@@ -14,7 +14,7 @@ export default function decorate(block) {
   decorateButtons(textCell, 'light');
 
   const media = el('div', 'wr3-callout-media');
-  const pic = mediaCell ? findMedia(mediaCell) : null;
+  const pic = (mediaCell ? findMedia(mediaCell) : null) || makePicture('/media/wr3/callout.jpg');
   if (pic) media.append(pic);
 
   const text = el('div', 'wr3-callout-text', ...textCell.children);

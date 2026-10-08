@@ -1,5 +1,5 @@
 import {
-  el, decoratePlaceholders, decorateButtons, findMedia,
+  el, decoratePlaceholders, decorateButtons, findMedia, makePicture,
 } from '../../scripts/wr3.js';
 
 /**
@@ -35,7 +35,8 @@ export default function decorate(block) {
   text.querySelectorAll('p:not(.wr3-btn-wrap)').forEach((p) => p.classList.add('wr3-hero-lead'));
 
   const media = el('div', 'wr3-hero-media');
-  const picture = mediaCell ? findMedia(mediaCell) : null;
+  // an empty cell falls back to the sample photo so the hero is never blank
+  const picture = (mediaCell ? findMedia(mediaCell) : null) || makePicture('/media/wr3/hero.jpg');
   if (picture) {
     const frame = el('div', 'wr3-hero-frame');
     frame.append(picture);
