@@ -1,0 +1,103 @@
+body main .wr3-products {
+  position: relative;
+  overflow: hidden;
+  padding: var(--wr3-space) 0;
+}
+
+body main .wr3-products::before {
+  content: "";
+  position: absolute;
+  left: -300px;
+  top: 40px;
+  width: 640px;
+  height: 640px;
+  border: 2px solid var(--wr3-blue);
+  border-radius: 50%;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+body main .wr3-products .wr3-products-head {
+  max-width: 720px;
+  margin-bottom: 48px;
+}
+
+body main .wr3-products h2 {
+  font-size: clamp(28px, 3.2vw, 46px);
+}
+
+body main .wr3-products ul.wr3-products-grid {
+  display: grid;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body main .wr3-products .wr3-products-card {
+  position: relative;
+  padding: 20px 20px 26px;
+  border-radius: var(--wr3-radius);
+  background: var(--wr3-tint);
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+body main .wr3-products .wr3-products-card:hover,
+body main .wr3-products .wr3-products-card:focus-within {
+  background: var(--wr3-tint-2);
+  transform: translateY(-3px);
+}
+
+body main .wr3-products .wr3-products-media {
+  aspect-ratio: 4 / 3;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--wr3-tint-2);
+}
+
+body main .wr3-products .wr3-products-media picture,
+body main .wr3-products .wr3-products-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body main .wr3-products .wr3-products-media .wr3-ph {
+  width: 100%;
+  height: 100%;
+}
+
+body main .wr3-products .wr3-products-card h3 {
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+body main .wr3-products .wr3-products-body p {
+  margin: 0 0 12px;
+  color: var(--wr3-muted);
+  font-size: 15px;
+}
+
+/* stretch the link over the whole card */
+body main .wr3-products .wr3-products-card a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+@media (min-width: 560px) {
+  body main .wr3-products ul.wr3-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  body main .wr3-products ul.wr3-products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

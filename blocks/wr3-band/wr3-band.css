@@ -1,0 +1,51 @@
+body main .wr3-band {
+  position: relative;
+  overflow: hidden;
+  padding: var(--wr3-space) 0;
+  background: var(--wr3-tint);
+  text-align: center;
+}
+
+body main .wr3-band::before,
+body main .wr3-band::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+body main .wr3-band::before {
+  width: 640px;
+  height: 640px;
+  right: -260px;
+  top: -300px;
+  border: 2px solid var(--wr3-blue);
+  opacity: 0.3;
+}
+
+body main .wr3-band::after {
+  width: 380px;
+  height: 380px;
+  left: -160px;
+  bottom: -220px;
+  border: 2px solid var(--wr3-navy);
+  opacity: 0.15;
+}
+
+body main .wr3-band .wr3-band-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+body main .wr3-band h2 {
+  font-size: clamp(28px, 3.2vw, 46px);
+}
+
+body main .wr3-band p {
+  color: var(--wr3-muted);
+  font-size: 18px;
+}
+
+body main .wr3-band .wr3-btn-wrap {
+  margin: 32px 0 0;
+}

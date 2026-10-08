@@ -1,0 +1,138 @@
+body main .wr3-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(40px, 6vw, 96px) 0 var(--wr3-space);
+}
+
+/* oversized outline circles */
+body main .wr3-hero::before,
+body main .wr3-hero::after {
+  content: "";
+  position: absolute;
+  border: 2px solid var(--wr3-blue);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+body main .wr3-hero::before {
+  width: 640px;
+  height: 640px;
+  right: -300px;
+  top: -200px;
+  opacity: 0.3;
+}
+
+body main .wr3-hero::after {
+  width: 420px;
+  height: 420px;
+  left: -220px;
+  bottom: -200px;
+  border-color: var(--wr3-navy);
+  opacity: 0.15;
+}
+
+body main .wr3-hero .wr3-hero-grid {
+  display: grid;
+  gap: 40px;
+  align-items: center;
+}
+
+body main .wr3-hero .wr3-hero-crumbs {
+  margin-bottom: 28px;
+  color: var(--wr3-muted);
+  font-size: 14px;
+}
+
+body main .wr3-hero .wr3-hero-crumbs a {
+  color: var(--wr3-muted);
+  font-family: var(--wr3-font);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-decoration: none;
+}
+
+body main .wr3-hero .wr3-hero-crumbs a:hover {
+  color: var(--wr3-blue);
+}
+
+body main .wr3-hero h1 {
+  margin-bottom: 0.4em;
+  font-size: clamp(38px, 5.2vw, 76px);
+  font-weight: 300;
+  line-height: 1.05;
+}
+
+body main .wr3-hero .wr3-hero-lead {
+  max-width: 520px;
+  margin-bottom: 32px;
+  color: var(--wr3-muted);
+  font-size: 19px;
+}
+
+body main .wr3-hero .wr3-btn-wrap {
+  margin: 32px 0 0;
+}
+
+body main .wr3-hero .wr3-hero-lead + .wr3-btn-wrap {
+  margin-top: 0;
+}
+
+body main .wr3-hero .wr3-hero-media {
+  position: relative;
+  width: min(100%, 520px);
+  margin: 0 auto;
+}
+
+body main .wr3-hero .wr3-hero-ring {
+  position: absolute;
+  inset: -22px;
+  border: 2px solid var(--wr3-blue);
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+body main .wr3-hero .wr3-hero-frame {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+body main .wr3-hero .wr3-hero-frame picture,
+body main .wr3-hero .wr3-hero-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body main .wr3-hero .wr3-hero-frame .wr3-ph {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 900px) {
+  body main .wr3-hero::before {
+    width: 900px;
+    height: 900px;
+    right: -340px;
+    top: -260px;
+  }
+
+  body main .wr3-hero::after {
+    width: 520px;
+    height: 520px;
+  }
+
+  body main .wr3-hero .wr3-hero-grid {
+    grid-template-columns: 1.05fr 1fr;
+    gap: clamp(32px, 6vw, 96px);
+  }
+
+  body main .wr3-hero .wr3-hero-media {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 0 0 auto;
+  }
+}

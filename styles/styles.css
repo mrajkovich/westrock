@@ -648,54 +648,185 @@ body.columns main > .section:empty {
 main[hidden] {
   display: none !important;
 }
-/* ── WR3 Page Override — SWR navy brand for index-3 ── */
+/* ── WR3 landing page (Smurfit Westrock flower packaging) ──────────────
+   Page-level tokens and resets. Block styles live in blocks/wr3-*.
+   Everything is scoped to pages that contain the wr3-nav block. */
+:root {
+  --wr3-navy: #002d74;
+  --wr3-blue: #0097f5;
+  --wr3-blue-light: #5cc2ff;
+  --wr3-tint: #e8f4fd;
+  --wr3-tint-2: #d3eafb;
+  --wr3-ink: #0b1f44;
+  --wr3-muted: #4a5c7d;
+  --wr3-line: #c9d6ea;
+  --wr3-radius: 18px;
+  --wr3-max: 1240px;
+  --wr3-pad: clamp(20px, 5vw, 64px);
+  --wr3-space: clamp(64px, 9vw, 128px);
+  --wr3-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 body:has(.wr3-nav) {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
-  background-color: #ffffff !important;
-  color: #374151 !important;
+  background: #fff;
+  color: var(--wr3-ink);
+  font-family: var(--wr3-font);
+  font-size: 17px;
+  line-height: 1.6;
+  letter-spacing: 0;
 }
 
-body:has(.wr3-nav) h1,
-body:has(.wr3-nav) h2,
-body:has(.wr3-nav) h3,
-body:has(.wr3-nav) h4,
-body:has(.wr3-nav) h5,
-body:has(.wr3-nav) h6 {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
-  color: #00205B !important;
+/* remove the theme's decorative gradient orbs and grid for this page */
+body:has(.wr3-nav)::before,
+body:has(.wr3-nav)::after {
+  display: none;
 }
 
-body:has(.wr3-nav) p,
-body:has(.wr3-nav) li,
-body:has(.wr3-nav) a {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+/* the page ships its own header and footer blocks */
+body:has(.wr3-nav) > header,
+body:has(.wr3-nav) > footer {
+  display: none;
 }
 
-body:has(.wr3-nav) main,
-body:has(.wr3-nav) main .section,
+/* full-bleed sections: each wr3 block manages its own width */
 body:has(.wr3-nav) main > .section {
-  background-color: #ffffff !important;
-  background-image: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  padding: 0;
+  background: none;
 }
 
 body:has(.wr3-nav) main > .section > div {
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  max-width: none;
+  margin: 0;
+  padding: 0;
 }
 
-body:has(.wr3-nav) header,
-body:has(.wr3-nav) footer {
-  display: none !important;
+body:has(.wr3-nav) main :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--wr3-font);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--wr3-navy);
+  background: none;
+  -webkit-text-fill-color: currentcolor;
+  margin: 0 0 0.5em;
 }
 
-body:has(.wr3-nav) a.button:any-link,
-body:has(.wr3-nav) button.button {
-  background-color: #00205B !important;
-  border-color: #00205B !important;
-  border-radius: 24px !important;
-  color: #ffffff !important;
-  font-family: Arial, sans-serif !important;
+body:has(.wr3-nav) main p {
+  margin: 0 0 1em;
+}
+
+body:has(.wr3-nav) main :is(.wr3-nav, .wr3-hero, .wr3-intro, .wr3-products, .wr3-band, .wr3-stories, .wr3-sustain, .wr3-form, .wr3-callout, .wr3-footer) {
+  font-family: var(--wr3-font);
+  letter-spacing: 0;
+}
+
+/* shared pieces used by several wr3 blocks */
+.wr3-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: var(--wr3-max);
+  margin: 0 auto;
+  padding: 0 var(--wr3-pad);
+}
+
+.wr3-eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--wr3-blue);
+}
+
+body main a.wr3-btn {
+  display: inline-block;
+  padding: 15px 34px;
+  border: 2px solid var(--wr3-blue);
+  border-radius: 999px;
+  background: var(--wr3-blue);
+  color: #fff;
+  font-family: var(--wr3-font);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+body main a.wr3-btn:hover,
+body main a.wr3-btn:focus-visible {
+  background: var(--wr3-navy);
+  border-color: var(--wr3-navy);
+  color: #fff;
+  text-decoration: none;
+}
+
+body main a.wr3-btn.wr3-btn-ghost {
+  background: transparent;
+  color: var(--wr3-blue);
+}
+
+body main a.wr3-btn.wr3-btn-ghost:hover,
+body main a.wr3-btn.wr3-btn-ghost:focus-visible {
+  background: var(--wr3-blue);
+  border-color: var(--wr3-blue);
+  color: #fff;
+}
+
+body main a.wr3-btn.wr3-btn-light {
+  background: #fff;
+  border-color: #fff;
+  color: var(--wr3-navy);
+}
+
+body main a.wr3-btn.wr3-btn-light:hover,
+body main a.wr3-btn.wr3-btn-light:focus-visible {
+  background: transparent;
+  color: #fff;
+}
+
+body main a.wr3-link {
+  color: var(--wr3-blue);
+  font-family: var(--wr3-font);
+  font-size: inherit;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-decoration: none;
+}
+
+body main a.wr3-link::after {
+  content: " \2192";
+}
+
+body main a.wr3-link:hover {
+  color: var(--wr3-navy);
+  text-decoration: none;
+}
+
+/* image placeholder shown until a real picture is authored */
+.wr3-ph {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 120px;
+  padding: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #bfe2fb, #7cc3f2 55%, #0097f5);
+  color: rgb(255 255 255 / 85%);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  overflow-wrap: anywhere;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.wr3-ph.wr3-ph-dark {
+  background: linear-gradient(135deg, #1a4a99, #002d74);
 }

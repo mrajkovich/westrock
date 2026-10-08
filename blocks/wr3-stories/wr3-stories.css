@@ -1,0 +1,125 @@
+body main .wr3-stories {
+  padding: var(--wr3-space) 0;
+}
+
+body main .wr3-stories .wr3-stories-head {
+  max-width: 760px;
+  margin-bottom: 48px;
+}
+
+body main .wr3-stories h2 {
+  font-size: clamp(28px, 3.2vw, 46px);
+}
+
+body main .wr3-stories .wr3-stories-grid {
+  display: grid;
+  gap: 32px;
+}
+
+body main .wr3-stories .wr3-stories-side {
+  display: grid;
+  gap: 24px;
+  align-content: start;
+}
+
+body main .wr3-stories .wr3-story {
+  position: relative;
+}
+
+body main .wr3-stories .wr3-story-media {
+  overflow: hidden;
+  background: var(--wr3-tint-2);
+}
+
+body main .wr3-stories .wr3-story-media picture,
+body main .wr3-stories .wr3-story-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body main .wr3-stories .wr3-story-media .wr3-ph {
+  width: 100%;
+  height: 100%;
+}
+
+body main .wr3-stories .wr3-tag {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--wr3-blue);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+body main .wr3-stories .wr3-story h3 {
+  font-weight: 400;
+}
+
+body main .wr3-stories .wr3-story-cta {
+  margin: 0;
+}
+
+/* featured story */
+body main .wr3-stories .wr3-story-feature .wr3-story-media {
+  aspect-ratio: 3 / 2;
+  margin-bottom: 24px;
+  border-radius: var(--wr3-radius);
+}
+
+body main .wr3-stories .wr3-story-feature h3 {
+  max-width: 560px;
+  margin-bottom: 24px;
+  font-size: clamp(24px, 2.4vw, 34px);
+}
+
+/* supporting stories */
+body main .wr3-stories .wr3-story-mini {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 18px;
+  padding: 18px;
+  border: 1px solid var(--wr3-line);
+  border-radius: var(--wr3-radius);
+  transition: border-color 0.2s;
+}
+
+body main .wr3-stories .wr3-story-mini:hover,
+body main .wr3-stories .wr3-story-mini:focus-within {
+  border-color: var(--wr3-blue);
+}
+
+body main .wr3-stories .wr3-story-mini .wr3-story-media {
+  aspect-ratio: 1;
+  border-radius: 12px;
+}
+
+body main .wr3-stories .wr3-story-mini h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+body main .wr3-stories .wr3-story-mini a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+body main .wr3-stories .wr3-stories-foot {
+  margin: 40px 0 0;
+}
+
+@media (min-width: 900px) {
+  body main .wr3-stories .wr3-stories-grid {
+    grid-template-columns: 1.45fr 1fr;
+    gap: 40px;
+  }
+
+  body main .wr3-stories .wr3-story-mini {
+    grid-template-columns: 130px 1fr;
+    gap: 20px;
+  }
+}
