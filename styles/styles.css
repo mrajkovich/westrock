@@ -648,3 +648,54 @@ body.columns main > .section:empty {
 main[hidden] {
   display: none !important;
 }
+/* ── WR3 Page Override — SWR navy brand for index-3 ── */
+body:has(.wr3-nav) {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+  background-color: #ffffff !important;
+  color: #374151 !important;
+}
+
+body:has(.wr3-nav) h1,
+body:has(.wr3-nav) h2,
+body:has(.wr3-nav) h3,
+body:has(.wr3-nav) h4,
+body:has(.wr3-nav) h5,
+body:has(.wr3-nav) h6 {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+  color: #00205B !important;
+}
+
+body:has(.wr3-nav) p,
+body:has(.wr3-nav) li,
+body:has(.wr3-nav) a {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+}
+
+body:has(.wr3-nav) main,
+body:has(.wr3-nav) main .section,
+body:has(.wr3-nav) main > .section {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body:has(.wr3-nav) main > .section > div {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body:has(.wr3-nav) header,
+body:has(.wr3-nav) footer {
+  display: none !important;
+}
+
+body:has(.wr3-nav) a.button:any-link,
+body:has(.wr3-nav) button.button {
+  background-color: #00205B !important;
+  border-color: #00205B !important;
+  border-radius: 24px !important;
+  color: #ffffff !important;
+  font-family: Arial, sans-serif !important;
+}
