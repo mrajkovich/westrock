@@ -1,0 +1,49 @@
+body main .wr3-intro {
+  padding: var(--wr3-space) 0;
+  text-align: center;
+}
+
+body main .wr3-intro .wr3-intro-head {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+body main .wr3-intro h2 {
+  font-size: clamp(26px, 2.8vw, 42px);
+  font-weight: 300;
+}
+
+body main .wr3-intro .wr3-intro-head p {
+  color: var(--wr3-muted);
+  font-size: 18px;
+}
+
+body main .wr3-intro ul.wr3-intro-benefits {
+  display: grid;
+  gap: 28px 48px;
+  margin: 56px 0 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+body main .wr3-intro .wr3-intro-benefits li {
+  padding-left: 20px;
+  border-left: 3px solid var(--wr3-blue);
+  color: var(--wr3-muted);
+  font-size: 16px;
+}
+
+body main .wr3-intro .wr3-intro-benefits strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--wr3-navy);
+  font-size: 19px;
+  font-weight: 600;
+}
+
+@media (min-width: 700px) {
+  body main .wr3-intro ul.wr3-intro-benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

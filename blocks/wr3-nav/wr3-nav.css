@@ -1,0 +1,135 @@
+body main .wr3-nav {
+  position: relative;
+  z-index: 5;
+  background: #fff;
+  border-bottom: 1px solid var(--wr3-line);
+}
+
+body main .wr3-nav .wr3-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+}
+
+body main .wr3-nav a.wr3-nav-brand {
+  color: var(--wr3-navy);
+  font-family: var(--wr3-font);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+body main .wr3-nav .wr3-nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+body main .wr3-nav .wr3-nav-toggle span,
+body main .wr3-nav .wr3-nav-toggle span::before,
+body main .wr3-nav .wr3-nav-toggle span::after {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--wr3-navy);
+  transition: transform 0.2s;
+}
+
+body main .wr3-nav .wr3-nav-toggle span {
+  position: relative;
+}
+
+body main .wr3-nav .wr3-nav-toggle span::before,
+body main .wr3-nav .wr3-nav-toggle span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+body main .wr3-nav .wr3-nav-toggle span::before {
+  top: -7px;
+}
+
+body main .wr3-nav .wr3-nav-toggle span::after {
+  top: 7px;
+}
+
+body main .wr3-nav .wr3-nav-links {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px var(--wr3-pad) 24px;
+  background: #fff;
+  border-bottom: 1px solid var(--wr3-line);
+}
+
+body main .wr3-nav.wr3-nav-open .wr3-nav-links {
+  display: flex;
+}
+
+body main .wr3-nav a.wr3-nav-link,
+body main .wr3-nav a.wr3-nav-cta {
+  color: var(--wr3-navy);
+  font-family: var(--wr3-font);
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-decoration: none;
+  padding: 10px 0;
+}
+
+body main .wr3-nav a.wr3-nav-link:hover {
+  color: var(--wr3-blue);
+}
+
+body main .wr3-nav a.wr3-nav-cta {
+  align-self: flex-start;
+  padding: 9px 22px;
+  border: 2px solid var(--wr3-blue);
+  border-radius: 999px;
+  color: var(--wr3-blue);
+  font-weight: 500;
+}
+
+body main .wr3-nav a.wr3-nav-cta:hover {
+  background: var(--wr3-blue);
+  color: #fff;
+}
+
+@media (min-width: 900px) {
+  body main .wr3-nav .wr3-nav-toggle {
+    display: none;
+  }
+
+  body main .wr3-nav .wr3-nav-links {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 28px;
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+
+  body main .wr3-nav a.wr3-nav-link,
+  body main .wr3-nav a.wr3-nav-cta {
+    padding: 0;
+  }
+
+  body main .wr3-nav a.wr3-nav-cta {
+    padding: 9px 22px;
+  }
+}

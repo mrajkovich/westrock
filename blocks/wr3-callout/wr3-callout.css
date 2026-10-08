@@ -1,0 +1,87 @@
+body main .wr3-callout {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(56px, 7vw, 96px) 0;
+  background: var(--wr3-navy);
+  border-bottom: 1px solid rgb(255 255 255 / 18%);
+}
+
+body main .wr3-callout::before,
+body main .wr3-callout::after {
+  content: "";
+  position: absolute;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+body main .wr3-callout::before {
+  width: 640px;
+  height: 640px;
+  right: -240px;
+  top: -280px;
+}
+
+body main .wr3-callout::after {
+  width: 380px;
+  height: 380px;
+  left: -180px;
+  bottom: -220px;
+}
+
+body main .wr3-callout .wr3-callout-inner {
+  display: grid;
+  gap: 32px;
+  align-items: center;
+  justify-items: start;
+}
+
+body main .wr3-callout .wr3-callout-media {
+  width: 160px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+body main .wr3-callout .wr3-callout-media picture,
+body main .wr3-callout .wr3-callout-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body main .wr3-callout .wr3-callout-media .wr3-ph {
+  width: 100%;
+  height: 100%;
+}
+
+body main .wr3-callout .wr3-callout-media:empty {
+  display: none;
+}
+
+body main .wr3-callout h2 {
+  color: #fff;
+  font-size: clamp(26px, 3vw, 42px);
+}
+
+body main .wr3-callout p {
+  max-width: 560px;
+  color: rgb(255 255 255 / 85%);
+}
+
+body main .wr3-callout .wr3-btn-wrap {
+  margin: 28px 0 0;
+}
+
+@media (min-width: 800px) {
+  body main .wr3-callout .wr3-callout-inner {
+    grid-template-columns: auto 1fr;
+    gap: clamp(32px, 6vw, 80px);
+  }
+
+  body main .wr3-callout .wr3-callout-media {
+    width: 220px;
+  }
+}
